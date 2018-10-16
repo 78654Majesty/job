@@ -1,0 +1,12 @@
+group = 'com.clouddeer.xxl.job.executor'
+version = '1.9.2'
+description = ''
+dependencies {
+    compile (group: 'org.springframework.boot', name: 'spring-boot-starter-web') {
+        exclude(module: 'spring-boot-starter-tomcat')
+    }
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-undertow'
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-feign', version: '1.4.5.RELEASE'
+    compile group: 'com.alibaba', name: 'fastjson', version:'1.2.33'
+    compile project(':xxl-job-core')
+}

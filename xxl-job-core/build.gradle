@@ -1,0 +1,15 @@
+group = 'xxl.job.core'
+version = '1.9.2-SNAPSHOT'
+description = 'xxl-job-core'
+dependencies {
+    compile group: 'javax.servlet', name: 'javax.servlet-api', version:'3.0.1'
+    compile group: 'javax.servlet.jsp', name: 'jsp-api', version:'2.2'
+    compile group: 'org.eclipse.jetty', name: 'jetty-server', version:'9.4.11.v20180605'
+    compile group: 'org.slf4j', name: 'slf4j-api', version:'1.7.25'
+    compile group: 'com.caucho', name: 'hessian', version:'4.0.51'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version:'2.9.4'
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version:'4.5.5'
+    compile group: 'org.springframework', name: 'spring-context', version:'4.3.14.RELEASE'
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version:'2.4.13'
+    compile group: 'org.apache.commons', name: 'commons-exec', version:'1.3'
+}

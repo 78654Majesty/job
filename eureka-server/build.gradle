@@ -1,0 +1,9 @@
+dependencies {
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-netflix-eureka-server'
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-undertow'
+}
+configurations {
+    compile.exclude module: 'spring-boot-starter-tomcat'
+}

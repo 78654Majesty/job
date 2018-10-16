@@ -1,0 +1,29 @@
+server:
+  port: 8181
+
+spring:
+  application:
+    name: xxl-job-admin
+#  # 配置中心
+#  cloud:
+#    config:
+#      fail-fast: true
+#      name: ${spring.application.name}
+#      profile: ${spring.profiles.active}
+#      discovery:
+#        enabled: true
+#        service-id: pigx-config
+  profiles:
+    active: dev
+
+# 注册中心
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+

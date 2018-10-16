@@ -1,0 +1,13 @@
+logging:
+  config: classpath:logback.xml
+xxl:
+  job:
+    accessToken: 'token'
+    admin:
+      addresses: http://localhost:8181
+    executor:
+      appname: xxl-job-executor-sample
+      ip: ''
+      logpath: ./logs
+      logretentiondays: 7
+      port: 9001

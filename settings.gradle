@@ -1,0 +1,6 @@
+'cloud-deer-dispatcher'
+
+include "xxl-job-core"
+include "xxl-job-admin"
+include "xxl-job-executor-sample"
+include "eureka-server"

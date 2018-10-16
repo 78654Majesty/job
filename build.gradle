@@ -1,0 +1,66 @@
+buildscript {
+    repositories {
+        //maven { url 'http://192.168.0.155:8081/repository/maven-public/' }
+        //maven { url "http://repo.maven.apache.org/maven2" }
+        maven { url 'http://nexus.saicmsit.local:8081/repository/maven-public/' }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    }
+    ext {
+        springBootVersion = '2.0.3.RELEASE'
+        springCloudVersion = 'Finchley.RELEASE'
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("io.spring.gradle:dependency-management-plugin:1.0.3.RELEASE")
+    }
+}
+
+subprojects {
+    apply plugin: 'maven'
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: "io.spring.dependency-management"
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    repositories {
+        //maven { url 'http://192.168.0.155:8081/repository/maven-public/' }
+        //maven { url "http://repo.maven.apache.org/maven2" }
+        maven { url 'http://nexus.saicmsit.local:8081/repository/maven-public/' }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    }
+
+    configurations {
+        // 所有需要忽略的包定义在此
+        all*.exclude group: 'commons-httpclient'
+        all*.exclude group: 'commons-logging'
+        all*.exclude group: 'commons-beanutils', module: 'commons-beanutils'
+    }
+
+    dependencies {
+        compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client'
+        compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator'
+//        compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-hystrix'
+        compileOnly group: 'org.projectlombok', name: 'lombok', version:'1.18.0'
+        compileOnly group: 'org.slf4j', name: 'slf4j-log4j12', version:'1.7.25'
+        testCompile('org.springframework.boot:spring-boot-starter-test')
+    }
+
+    buildscript {
+        dependencyManagement {
+            imports {
+                mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+            }
+        }
+    }
+
+}
+
+
+
+

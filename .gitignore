@@ -1,0 +1,72 @@
+screenshots
+.gradle
+*.iml
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio
+
+*.iml
+yarn.lock
+stats.json
+
+## Directory-based project format:
+.idea/
+.vscode/
+.vs
+logs/
+
+## File-based project format:
+*.ipr
+*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
+out/
+upload/
+target/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+node_modules/
+.sass-cache/
+bower_components/
+app/bower_components
+.DS_Store
+.tmp
+ios
+.yo-rc.json
+.jshintrc
+.gitattributes
+.editorconfig
+npm-debug.log
+build/
+# ---- Mac OS X
+# Thumbnails
+._*
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# ---- Windows
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+# Folder config file
+Desktop.ini
+api/v1/advertising/src/test/
+api/v1/comment/src/test/java/
+api/v1/logistics/src/test/
+api/v1/member/src/test/
+api/v1/refund/src/test/
+api/v1/sensitiveWord/src/test/java/com/taipu/preferred/controller/
+api/v1/shopping/src/test/
+api/core/out/
+api/core/build/
+api/utils/out/
+api/utils/build/
